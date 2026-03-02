@@ -4,6 +4,8 @@
 # there is currently a bug https://github.com/rails/rails/issues/55144
 module ActiveStorageAnalyzeJobSuppressBroadcasts
   def perform(blob)
+    return unless blob.attachments.exists?
+
     Board.suppressing_turbo_broadcasts do
       Card.suppressing_turbo_broadcasts do
         super
