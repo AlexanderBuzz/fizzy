@@ -22,12 +22,6 @@ export default class extends Controller {
     this.#hideItem(this.searchTarget)
   }
 
-  clearInput(event) {
-    if (event.detail.isAlreadyEmpty) {
-      this.reset()
-    }
-  }
-
   showModalAndSubmit(event) {
     this.showModal()
     this.formTarget.requestSubmit()

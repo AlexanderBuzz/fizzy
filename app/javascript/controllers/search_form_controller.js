@@ -4,14 +4,11 @@ export default class extends Controller {
   static targets = ["searchInput"]
 
   clearInput() {
-    this.dispatch("clear", { detail: { isAlreadyEmpty: this.isEmpty } })
-    if (!this.isEmpty) {
+    if (this.searchInputTarget.value) {
       this.searchInputTarget.value = ""
       this.searchInputTarget.focus()
+    } else {
+      this.dispatch("reset")
     }
-  }
-
-  get isEmpty() {
-    return !this.searchInputTarget.value
   }
 }

@@ -2,7 +2,7 @@
   class: "search__form flex align-center justify-center gap-half",
   data: {
     controller: "search-form",
-    action: "search-form:clear->bar#clearInput",
+    action: "search-form:reset->bar#reset",
     bar_target: "form",
     turbo_frame: defined?(target_turbo_frame) ? target_turbo_frame : nil } do |form| %>
   <%= form.label :q, "Search Fizzy", class: "font-weight-black txt-nowrap" %>
